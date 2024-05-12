@@ -4,10 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { ApiProvider } from '@reduxjs/toolkit/query/react';
+import { apiSlice } from './features/api/apiSlice';
+
 ReactDOM.render(
-  <React.StrictMode>
+    <ApiProvider api={apiSlice}>
     <App />
-  </React.StrictMode>,
+    </ApiProvider>,
   document.getElementById('root')
 );
 
